@@ -59,19 +59,55 @@
   background-image: url(../img/icons/cart.svg);
 }
 .menu {
-  height: 30px;
-  padding: 5px 10px;
-  border-radius: 5px;
+  height: 20px;
+  height: 35px;
   position: relative;
-  border: 1px solid #000;
+  border: none;
   z-index: 15;
   display: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.menu__item {
+  width: 35px;
+  height: 3px;
+  background-color: #000;
+  display: block;
+  font-size: 0;
+  position: relative;
+  transition: all 0.3s ease-in;
+}
+.menu__item::before,
+.menu__item::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 3px;
+  background-color: #000;
+  left: 0;
+}
+.menu__item::before {
+  top: 10px;
+}
+.menu__item::after {
+  bottom: 10px;
+}
+.active__btn .menu__item::before {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease-in;
+  top: 0px;
+}
+.active__btn .menu__item::after {
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease-in;
+  bottom: 0px;
 }
 
 /* Home */
 .home {
   height: 100vh;
   position: relative;
+  margin-bottom: 130px;
 }
 .home__inner-bg {
   background-color: #f1eadc;
@@ -266,4 +302,55 @@
   .home__subtitle {
     font-size: 16px;
   }
+}
+
+/* ------------------ */
+/* ---Collection----- */
+/* ------------------ */
+.collection {
+  margin-bottom: 130px;
+}
+.collection__list {
+  display: flex;
+}
+.collection__item {
+  margin-right: 30px;
+}
+.collection__item:last-child {
+  margin-right: 0;
+}
+.collection__img {
+  max-width: 350px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.collection__item-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.collection__price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.collection__old-price {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  text-decoration-line: line-through;
+  color: #9c9c9c;
+  margin-right: 10px;
+}
+.collection__new-price {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #998e78;
 }

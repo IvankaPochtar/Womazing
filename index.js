@@ -37,6 +37,7 @@ const menuItem = document.querySelector('.nav__list');
  menuBtn.addEventListener('click',() => {
     console.log('Дмитро клікнув на кнопку!!!')
     menuItem.classList.toggle('active');
+    menuBtn.classList.toggle('active__btn')
  });
 
  //menuItem.classList.add('active'); - тільки додає клас
