@@ -3,6 +3,7 @@
   padding-top: 50px;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .nav__list {
   display: flex;
@@ -20,7 +21,6 @@
   margin-right: 0;
 }
 .nav__link:hover {
-  font-size: 15px;
   line-height: 140%;
   letter-spacing: 0.02em;
   color: #6e9c9f;
@@ -57,6 +57,15 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(../img/icons/cart.svg);
+}
+.menu {
+  height: 30px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: relative;
+  border: 1px solid #000;
+  z-index: 15;
+  display: none;
 }
 
 /* Home */
@@ -173,6 +182,31 @@
 @media screen and (max-width: 992px) {
   .nav__list {
     display: none;
+    position: absolute;
+    top: 0;
+    right: -15px;
+    background-color: #f1eadc;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    width: 45vw;
+    height: 100vh;
+  }
+  .active {
+    display: flex;
+  }
+  .menu {
+    display: block;
+  }
+  .nav__item {
+    padding: 10px;
+    font-weight: 700;
+  }
+  .nav__item:first-child {
+    padding-top: 100px;
+  }
+  .nav__link {
+    font-size: 40px;
   }
   .home__images {
     max-width: 450px;
@@ -185,6 +219,9 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .nav__link {
+    font-size: 30px;
+  }
   .home__inner {
     flex-direction: column-reverse;
   }
@@ -204,6 +241,12 @@
 @media screen and (max-width: 480px) {
   .nav {
     padding-top: 20px;
+  }
+  .nav__item {
+    margin-bottom: 40px;
+  }
+  .nav__link {
+    font-size: 26px;
   }
   .home__inner {
     padding-top: 20px;
