@@ -211,7 +211,7 @@
   }
   .home__images::after {
     top: 30px;
-    right: -60px;
+    /* right: -60px; */
     width: 150px;
   }
 }
