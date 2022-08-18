@@ -386,3 +386,8 @@
   letter-spacing: 0.02em;
   color: #998e78;
 }
+@media screen and (max-width: 768px) {
+  .collection {
+    padding-top: 250px;
+  }
+}
